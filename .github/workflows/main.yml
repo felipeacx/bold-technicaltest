@@ -1,0 +1,18 @@
+# Configuration to deploy app on merge implementing CI/CD
+
+name: CI/CD to Firebase
+"on":
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci --legacy-peer-deps && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BOLD_TECHNICALTEST }}"
+          channelId: live
+          projectId: bold-technicaltest
