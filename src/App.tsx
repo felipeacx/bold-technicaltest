@@ -1,7 +1,11 @@
+import Header from "./components/Header"
+import Home from "./pages/Home"
+
 function App() {
   return (
     <>
-      <h1 className="text-6xl m-10 b-2 flex justify-center items-center">Bold: Prueba Técnica</h1>
+      <Header />
+      <Home />
     </>
   )
 }
