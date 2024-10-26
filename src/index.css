@@ -21,3 +21,15 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+th {
+  font-weight: normal;
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+td {
+  padding: 25px 25px 25px 10px;
+  text-align: left;
+}
