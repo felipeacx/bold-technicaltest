@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { getActualMonth } from "../utils/utils"
+import { getActualMonth } from "../utils/utils.tsx"
 
 interface TabsProps {
   filter: number

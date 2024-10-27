@@ -1,9 +1,9 @@
 import { FaCheckCircle } from "react-icons/fa"
 import { MdError } from "react-icons/md"
-import { toDateTime } from "../utils/utils"
+import { toDateTime } from "../utils/utils.tsx"
 import { IoIosLink } from "react-icons/io"
 import { FC } from "react"
-import { TransactionProps } from "../pages/Home"
+import { TransactionProps } from "../pages/Home.tsx"
 
 interface TransactionContentProps {
   transaction: TransactionProps | undefined
@@ -55,22 +55,26 @@ const TransactionContent: FC<TransactionContentProps> = ({ transaction }) => {
             <span>Método de pago</span>
             <div className="flex items-center gap-3">
               {transaction?.paymentMethod === "BANCOLOMBIA" && (
-                <img src="/src/assets/img/bancolombia.jpg" alt="Bancolombia" className="size-10" />
+                <img
+                  src="/public/assets/img/bancolombia.jpg"
+                  alt="Bancolombia"
+                  className="size-10"
+                />
               )}
               {transaction?.paymentMethod === "DAVIPLATA" && (
-                <img src="/src/assets/img/davi.jpg" alt="Daviplata" className="size-10" />
+                <img src="/public/assets/img/davi.jpg" alt="Daviplata" className="size-10" />
               )}
               {transaction?.paymentMethod === "NEQUI" && (
-                <img src="/src/assets/img/nequi.jpg" alt="Nequi" className="size-10" />
+                <img src="/public/assets/img/nequi.jpg" alt="Nequi" className="size-10" />
               )}
               {transaction?.paymentMethod === "PSE" && (
-                <img src="/src/assets/img/pse.jpg" alt="PSE" className="size-10" />
+                <img src="/public/assets/img/pse.jpg" alt="PSE" className="size-10" />
               )}
               {transaction?.paymentMethod === "CARD" && transaction?.franchise === "MASTERCARD" && (
-                <img src="/src/assets/img/master.jpg" alt="MASTERCARD" className="size-10" />
+                <img src="/public/assets/img/master.jpg" alt="MASTERCARD" className="size-10" />
               )}
               {transaction?.paymentMethod === "CARD" && transaction?.franchise === "VISA" && (
-                <img src="/src/assets/img/visa.jpg" alt="VISA" className="size-10" />
+                <img src="/public/assets/img/visa.jpg" alt="VISA" className="size-10" />
               )}
               <span>*** {transaction?.transactionReference}</span>
             </div>
@@ -79,7 +83,7 @@ const TransactionContent: FC<TransactionContentProps> = ({ transaction }) => {
             <span>Tipo de pago</span>
             {transaction?.salesType === "TERMINAL" ? (
               <div className="flex items-center gap-3">
-                <img src="/src/assets/img/cobroexitoso.png" alt="Exitoso" />
+                <img src="/public/assets/img/cobroexitoso.png" alt="Exitoso" />
                 <span className="font-bold">Terminal</span>
               </div>
             ) : (

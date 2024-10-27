@@ -1,12 +1,12 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react"
-import TotalVentas from "../components/TotalVentas"
-import Filtro from "../components/Filtro"
-import Tabs from "../components/Tabs"
-import Dashboard from "../components/Dashboard"
-import Modal from "../components/Modal"
-import TransactionContent from "../components/TransactionContent"
+import { ChangeEvent, FC, useEffect, useRef, useState } from "react"
+import TotalVentas from "../components/TotalVentas.tsx"
+import Filtro from "../components/Filtro.tsx"
+import Tabs from "../components/Tabs.tsx"
+import Dashboard from "../components/Dashboard.tsx"
+import Modal from "../components/Modal.tsx"
+import TransactionContent from "../components/TransactionContent.tsx"
 
-const apiurl = "https://bold-fe-api.vercel.app/api"
+export const apiurl = "https://bold-fe-api.vercel.app/api"
 
 export interface TransactionProps {
   id: string
@@ -20,7 +20,7 @@ export interface TransactionProps {
   franchise?: "VISA" | "MASTERCARD"
 }
 
-const Home = () => {
+const Home: FC = () => {
   const [data, setData] = useState<TransactionProps[] | []>([])
   const [isOpen, setIsOpen] = useState(false)
   const openModal = () => setIsOpen(true)
@@ -68,11 +68,12 @@ const Home = () => {
 
     return filteredData ?? []
   }
+
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(apiurl)
-        if (!response.ok) throw new Error("La respuesta de la api no fue exitosa")
+        if (!response?.ok) throw new Error("La respuesta de la api no fue exitosa")
         const data = await response.json()
         setData(data.data)
         let filteredData = loadFilter(data.data, filter)
@@ -84,8 +85,7 @@ const Home = () => {
           )
         }
         setFilteredData(filteredData ?? data.data)
-      } catch (error) {
-        console.error("Error obteniendo los datos:", error)
+      } catch {
         setData([])
       }
     }
@@ -258,12 +258,17 @@ const Home = () => {
 
   function getTotal() {
     let sum = 0
-    filteredData.map((e) => {
-      sum += e.amount
-    })
+    if (Array.isArray(filteredData))
+      filteredData?.map((e) => {
+        sum += e.amount
+      })
     return sum
   }
+
   function yearTransactions(): string {
+    if (!Array.isArray(filteredData)) {
+      return ""
+    }
     return [
       ...new Set(filteredData.map((element) => String(new Date(element.createdAt).getFullYear()))),
     ].join(", ")

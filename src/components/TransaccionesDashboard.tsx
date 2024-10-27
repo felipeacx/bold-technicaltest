@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { TransactionProps } from "../pages/Home"
-import { toDateTime } from "../utils/utils"
+import { TransactionProps } from "../pages/Home.tsx"
+import { toDateTime } from "../utils/utils.tsx"
 import { IoIosLink } from "react-icons/io"
 
 interface TransaccionesDashboardProps {
@@ -42,7 +42,7 @@ const TransaccionesDashboard: FC<TransaccionesDashboardProps> = ({
               >
                 <td className="text-primary font-bold flex gap-4 items-end ml-3">
                   {row.status === "SUCCESSFUL" ? (
-                    <img src="/src/assets/img/cobroexitoso.png" alt="Exitoso" />
+                    <img src="/public/assets/img/cobroexitoso.png" alt="Exitoso" />
                   ) : (
                     <IoIosLink className="size-6" />
                   )}
@@ -56,25 +56,25 @@ const TransaccionesDashboard: FC<TransaccionesDashboardProps> = ({
                 <td className="flex items-center gap-4">
                   {row.paymentMethod === "BANCOLOMBIA" && (
                     <img
-                      src="/src/assets/img/bancolombia.jpg"
+                      src="/public/assets/img/bancolombia.jpg"
                       alt="Bancolombia"
                       className="size-10"
                     />
                   )}
                   {row.paymentMethod === "DAVIPLATA" && (
-                    <img src="/src/assets/img/davi.jpg" alt="Daviplata" className="size-10" />
+                    <img src="/public/assets/img/davi.jpg" alt="Daviplata" className="size-10" />
                   )}
                   {row.paymentMethod === "NEQUI" && (
-                    <img src="/src/assets/img/nequi.jpg" alt="Nequi" className="size-10" />
+                    <img src="/public/assets/img/nequi.jpg" alt="Nequi" className="size-10" />
                   )}
                   {row.paymentMethod === "PSE" && (
-                    <img src="/src/assets/img/pse.jpg" alt="PSE" className="size-10" />
+                    <img src="/public/assets/img/pse.jpg" alt="PSE" className="size-10" />
                   )}
                   {row.paymentMethod === "CARD" && row.franchise === "MASTERCARD" && (
-                    <img src="/src/assets/img/master.jpg" alt="MASTERCARD" className="size-10" />
+                    <img src="/public/assets/img/master.jpg" alt="MASTERCARD" className="size-10" />
                   )}
                   {row.paymentMethod === "CARD" && row.franchise === "VISA" && (
-                    <img src="/src/assets/img/visa.jpg" alt="VISA" className="size-10" />
+                    <img src="/public/assets/img/visa.jpg" alt="VISA" className="size-10" />
                   )}
                   <span>*** {row.transactionReference}</span>
                 </td>
@@ -107,9 +107,11 @@ const TransaccionesDashboard: FC<TransaccionesDashboardProps> = ({
             )
           })
         ) : (
-          <td colSpan={5}>
-            <span>No se encontraron transacciones.</span>
-          </td>
+          <tr>
+            <td colSpan={5}>
+              <span>No se encontraron transacciones.</span>
+            </td>
+          </tr>
         )}
       </tbody>
     </table>
