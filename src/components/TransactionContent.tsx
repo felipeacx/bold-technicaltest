@@ -103,7 +103,10 @@ const TransactionContent: FC<TransactionContentProps> = ({ transaction }) => {
             <span>Tipo de pago</span>
             {transaction?.salesType === "TERMINAL" ? (
               <div className="flex items-center gap-3">
-                <img src="/public/assets/img/cobroexitoso.png" alt="Exitoso" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/cobroexitoso.png?alt=media&token=3e60d46b-712a-42c9-a914-42c462462f94"
+                  alt="Terminal"
+                />
                 <span className="font-bold">Terminal</span>
               </div>
             ) : (
