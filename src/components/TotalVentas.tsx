@@ -1,7 +1,7 @@
 import { BsInfoCircle } from "react-icons/bs"
-import Tooltip from "./Tooltip"
+import Tooltip from "./Tooltip.tsx"
 import { FC } from "react"
-import { getActualMonth, getDay, getMonth, getWeek } from "../utils/utils"
+import { getActualMonth, getDay, getMonth, getWeek } from "../utils/utils.tsx"
 
 interface TotalVentasProps {
   filter: number

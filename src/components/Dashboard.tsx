@@ -1,8 +1,8 @@
 import { CiSearch } from "react-icons/ci"
-import TransaccionesDashboard from "./TransaccionesDashboard"
+import TransaccionesDashboard from "./TransaccionesDashboard.tsx"
 import { FC } from "react"
-import { TransactionProps } from "../pages/Home"
-import { getActualMonth } from "../utils/utils"
+import { TransactionProps } from "../pages/Home.tsx"
+import { getActualMonth } from "../utils/utils.tsx"
 
 interface DashboardProps {
   openModal: () => void
