@@ -56,25 +56,45 @@ const TransactionContent: FC<TransactionContentProps> = ({ transaction }) => {
             <div className="flex items-center gap-3">
               {transaction?.paymentMethod === "BANCOLOMBIA" && (
                 <img
-                  src="/public/assets/img/bancolombia.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/bancolombia.jpg?alt=media&token=a461b6f9-5dd2-4b5c-bfc5-2a6485ed8bd9"
                   alt="Bancolombia"
                   className="size-10"
                 />
               )}
               {transaction?.paymentMethod === "DAVIPLATA" && (
-                <img src="/public/assets/img/davi.jpg" alt="Daviplata" className="size-10" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/davi.jpg?alt=media&token=75bc86ba-b5d2-4784-b6fd-1683f999e851"
+                  alt="Daviplata"
+                  className="size-10"
+                />
               )}
               {transaction?.paymentMethod === "NEQUI" && (
-                <img src="/public/assets/img/nequi.jpg" alt="Nequi" className="size-10" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/nequi.jpg?alt=media&token=01d33508-dbfb-407c-a6ed-c2ae899c8725"
+                  alt="Nequi"
+                  className="size-10"
+                />
               )}
               {transaction?.paymentMethod === "PSE" && (
-                <img src="/public/assets/img/pse.jpg" alt="PSE" className="size-10" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/pse.jpg?alt=media&token=79a328af-da31-481a-9a76-56a0dd222c0b"
+                  alt="PSE"
+                  className="size-10"
+                />
               )}
               {transaction?.paymentMethod === "CARD" && transaction?.franchise === "MASTERCARD" && (
-                <img src="/public/assets/img/master.jpg" alt="MASTERCARD" className="size-10" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/master.jpg?alt=media&token=fa8a87c0-7959-4c5c-ad24-7b0715b0eb2a"
+                  alt="MASTERCARD"
+                  className="size-10"
+                />
               )}
               {transaction?.paymentMethod === "CARD" && transaction?.franchise === "VISA" && (
-                <img src="/public/assets/img/visa.jpg" alt="VISA" className="size-10" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/bold-technicaltest.appspot.com/o/visa.jpg?alt=media&token=2c42c120-66dd-48b7-8653-60645a7b7362"
+                  alt="VISA"
+                  className="size-10"
+                />
               )}
               <span>*** {transaction?.transactionReference}</span>
             </div>
