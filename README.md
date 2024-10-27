@@ -1,5 +1,7 @@
 # Prueba Practica Desarrollador Frontend Bold.co - React + TypeScript + Vite
 
+Prueba solucionada con React + TypeScript + Vite. Estilos con TailwindCSS, Google Storage como CDN para las imagenes y Firebase Hosting para el despliegue.
+
 # Construcción del proyecto
 
 Abrir una terminal en la raiz del proyecto
