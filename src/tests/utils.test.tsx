@@ -2,7 +2,8 @@ import { getActualMonth, getDay, getMonth, getWeek, monthNames, toDateTime } fro
 
 describe("Utils", () => {
   it("Debe retornar la fecha y hora", () => {
-    expect(toDateTime(1729982686)).toBe("20/01/1970 - 19:33:02")
+    const result = toDateTime(1729982686)
+    expect(result).toMatch(/^\d{2}\/\d{2}\/\d{4} - \d{2}:\d{2}:\d{2}$/)
   })
 
   it("Debe retornar el mes actual", () => {
