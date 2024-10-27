@@ -20,8 +20,11 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies and build
-        run: npm install && npm run build
+        run: npm ci --legacy-peer-deps && npm run build
 
       - name: Run tests
         run: npm test
